@@ -13,8 +13,5 @@ namespace UserServices.BusinessLayer
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public User Attendee { get; set; }
-
-        public List<Course> Courses { get; set; } = new List<Course>();
-
     }
 }

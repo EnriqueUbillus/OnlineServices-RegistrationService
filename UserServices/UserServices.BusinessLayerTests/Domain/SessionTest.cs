@@ -19,21 +19,14 @@ namespace UserServices.BusinessLayerTests
         [TestMethod]
         public void GetCoursesAll()
         {
-            List<Course> courses = new List<Course>();
-            
-            courses.Add(cou1);
-            courses.Add(cou2);
-            courses.Add(cou3);
-
             var startDate = DateTime.Now;
             var endDate = startDate.AddDays(30);
 
-            var ses = new Session { ID = 1, Teacher = teacher, Courses = courses, Attendee = attendee, StartDate = startDate, EndDate = endDate };
+            var ses = new Session { ID = 1, Teacher = teacher, Course = cou1, Attendee = attendee, StartDate = startDate, EndDate = endDate };
 
 
             //Course
-            Assert.AreEqual(3, ses.Courses.Count);
-            Assert.AreEqual(cou1.Name, ses.Courses[0].Name);
+            Assert.AreEqual(cou1.Name, ses.Course.Name);
         }
 
         [TestMethod()]
