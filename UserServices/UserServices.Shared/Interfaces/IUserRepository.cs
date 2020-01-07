@@ -1,11 +1,13 @@
-﻿using UserServices.Shared.TransferObject;
+﻿using OnlineServices.Shared.DataAccessHelpers;
+using System.Collections.Generic;
+using UserServices.Shared.TransferObject;
 
 namespace UserServices.Shared.Interface
 {
-    interface IUserRepository : IRepository<UserTO, int>
+    internal interface IUserRepository : IRepositoryTemp<UserTO, int>
     {
-        bool login();
-        void logout();
+        List<SessionTO> GetSessions(UserTO user);
 
+        bool IsInSession(UserTO user, SessionTO session);
     }
 }
