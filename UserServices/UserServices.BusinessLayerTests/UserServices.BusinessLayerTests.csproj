@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Cross-Cutting\OnlineServices.Shared\OnlineServices.Shared.csproj" />
     <ProjectReference Include="..\UserServices.BusinessLayer\UserServices.BusinessLayer.csproj" />
     <ProjectReference Include="..\UserServices.Shared\UserServices.Shared.csproj" />
   </ItemGroup>

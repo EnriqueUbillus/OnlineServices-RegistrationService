@@ -10,5 +10,7 @@ namespace UserServices.Shared.TransferObject
         public string Local { get; set; }
         public UserTO TeacherName { get; set; }
 
+        public CourseTO Course { get; set; }
+        public UserTO Attendee { get; set; }
     }
 }
