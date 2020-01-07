@@ -11,7 +11,7 @@ namespace UserServices.BusinessLayerTests.UseCase
         [TestMethod]
         public void AddUser_ThrowException_WhenUserIDisDiferentOfZero() // Exist
         {
-
+            //var Assistant = new AssistantRo
         }
     }
 }
