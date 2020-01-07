@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UserServices.BusinessLayer.UseCase;
+using UserServices.Shared.TransferObject;
 
 namespace UserServices.BusinessLayerTests.UseCase
 {
@@ -11,7 +13,23 @@ namespace UserServices.BusinessLayerTests.UseCase
         [TestMethod]
         public void AddUser_ThrowException_WhenUserIDisDiferentOfZero() // Exist
         {
-            //var Assistant = new AssistantRo
+            var assistant = new Assistant();
+            var userToAdd = new UserTO { ID = 1, Name = "User", IsActivated = true, Company = "Company 01", Role = Shared.Role.Assistant, Email = "user@gmail.com" };
+
+            Assert.ThrowsException<Exception>(  () => assistant.AddUser(userToAdd)  );
         }
+
+
+        /*public void AddSupplier_ThrowException_WhenSupplierIDisDiferentOfZero()
+        {
+            //ARRANGE
+            var Assistante = new AssistantRole((new Mock<IMSUnitOfWork>()).Object);
+            var SupplierToAdd = new SupplierTO { Id = 10, Name = "ExistantSupplier" };
+
+            //ACT
+            Assert.ThrowsException<Exception>(() => Assistante.AddSupplier(SupplierToAdd));
+            //TODO TEST IF INSERT IS CALLED Times.None: mockSupplierRepository.Verify(x => x.Insert(It.IsAny<SupplierTO>()), Times.Once);
+        }
+        */
     }
 }

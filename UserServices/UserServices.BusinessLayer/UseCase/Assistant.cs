@@ -10,12 +10,13 @@ namespace UserServices.BusinessLayer.UseCase
     {
         public bool AddUser(UserTO userTO)
         {
+            
             if (userTO == null)
                 throw new ArgumentNullException(nameof(userTO));
 
             if (userTO.ID != 0)
                 throw new Exception("Existing user");
-
+            
             try
             {
                 //Hack: UserRepository IRepository - Silvain
@@ -25,7 +26,6 @@ namespace UserServices.BusinessLayer.UseCase
             }
             catch (Exception)
             {
-
                 throw;
             }
 
